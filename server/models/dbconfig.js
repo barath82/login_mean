@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
 var dbURI = 'mongodb://localhost/meemgdpr';
-if (process.env.NODE_ENV === 'production') {
-  dbURI = process.env.MONGOLAB_URI;
-}
+//if (process.env.NODE_ENV === 'production') {
+//  dbURI = process.env.MONGOLAB_URI;
+//}
 
-
-mongoose.connect(dbURI);
+mongoose.connect(process.env.CUSTOMCONNSTR_MongolabUri || dbURI);
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
     console.log('Mongoose connected to ' + dbURI);

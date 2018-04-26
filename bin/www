@@ -1,16 +1,13 @@
 #!/usr/bin/env node
+//require('dotenv').load();
+//var mongod = require('mongod');
+//var dbServerURI = new mongod({
+//    port:27017,
+//    dbpath:process.env.DBPATH
+//});
 
-
-
-require('dotenv').load();
-var mongod = require('mongod');
-var dbServerURI = new mongod({
-    port:27017,
-    dbpath:process.env.DBPATH
-});
-
-dbServerURI.open((err) => {
-    if(err === null){
+//dbServerURI.open((err) => {
+  //  if(err === null){
         console.log('server connected');
         var meem = require('../meem');
         var debug = require('debug')('meemgdpr:server');
@@ -96,6 +93,6 @@ dbServerURI.open((err) => {
                 : 'port ' + addr.port;
             debug('Listening on ' + bind);
         }
-    }
-});
+  //  }
+//});
 
