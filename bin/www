@@ -12,30 +12,30 @@
         console.log('server connected');
         //var meem = require('../meem');
         //var debug = require('debug')('meemgdpr:server');
-        //var http = require('http');
+        var http = require('http');
         //
         ///**
         // * Get port from environment and store in Express.
         // */
 
-        //console.log('connecting to http');
-        //var port = normalizePort(process.env.PORT || '3000');
-        //meem.set('port', port);
+        console.log('connecting to http');
+        var port = normalizePort(process.env.PORT || '3000');
+        meem.set('port', port);
 
         ///**
         // * Create HTTP server.
         // */
 
-        //var server = http.createServer(meem);
+        var server = http.createServer(meem);
 
         ///**
         // * Listen on provided port, on all network interfaces.
         // */
-        //console.log('connected to http');
+        console.log('connected to http');
 
-        //server.listen(port);
-        //server.on('error', onError);
-        //server.on('listening', onListening);
+        server.listen(port);
+        server.on('error', onError);
+        server.on('listening', onListening);
 
         ///**
         // * Normalize a port into a number, string, or false.
