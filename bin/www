@@ -10,8 +10,8 @@
   //  if(err === null){
         var console = require('console');
         console.log('server connected');
-        //var meem = require('../meem');
-        //var debug = require('debug')('meemgdpr:server');
+        var meem = require('../meem');
+        var debug = require('debug')('meemgdpr:server');
         var http = require('http');
         //
         ///**
@@ -20,7 +20,7 @@
 
         console.log('connecting to http');
         var port = normalizePort(process.env.PORT || '3000');
-        //meem.set('port', port);
+        meem.set('port', port);
 
         ///**
         // * Create HTTP server.

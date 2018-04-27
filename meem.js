@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
-
+app.get('/',(req, res) => res.send('Success'));
 // Use the API routes when path starts with /api
 app.use('/meem', routesApi);
 
