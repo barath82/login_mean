@@ -20,7 +20,7 @@
 
         console.log('connecting to http');
         var port = normalizePort(process.env.PORT || '3000');
-        meem.set('port', port);
+        //meem.set('port', port);
 
         ///**
         // * Create HTTP server.
