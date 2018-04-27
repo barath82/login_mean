@@ -12,11 +12,12 @@
         var meem = require('../meem');
         var debug = require('debug')('meemgdpr:server');
         var http = require('http');
-
+        
         /**
          * Get port from environment and store in Express.
          */
 
+        console.log('connecting to http');
         var port = normalizePort(process.env.PORT || '3000');
         meem.set('port', port);
 
@@ -29,6 +30,7 @@
         /**
          * Listen on provided port, on all network interfaces.
          */
+        console.log('connected to http');
 
         server.listen(port);
         server.on('error', onError);

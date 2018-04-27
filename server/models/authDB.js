@@ -64,7 +64,7 @@ userSchema.methods.generateJWT = function() {
     email: this.email,
     name: this.username,
     exp: parseInt(expiry.getTime() / 1000),
-  }, process.env.JWT_SECRET); 
+  }, process.env.CUSTOMCONNSTR_jwtsecret || "meemmemory"); 
   return this.authID;
 };
 
