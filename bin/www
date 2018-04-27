@@ -8,6 +8,7 @@
 
 //dbServerURI.open((err) => {
   //  if(err === null){
+        var console = require('console');
         console.log('server connected');
         var meem = require('../meem');
         var debug = require('debug')('meemgdpr:server');
