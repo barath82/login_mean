@@ -11,13 +11,15 @@ require('./server/models/dbconfig');
 var routesApi = require('./server/routes/index');
 
 var app = express();
-
+console.log('first print');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
+console.log('second print');
 app.get('/',(req, res) => res.send('Success'));
+console.log('third print');
 // Use the API routes when path starts with /api
 app.use('/meem', routesApi);
 
