@@ -18,20 +18,33 @@
         // * Get port from environment and store in Express.
         // */
 
-        console.log('connecting to http');
+        console.log('connecting to https');
         var port = normalizePort(process.env.PORT || '3000');
         meem.set('port', port);
 
         ///**
         // * Create HTTP server.
         // */
+        var fs = require('fs');
 
-        var server = http.createServer(meem);
+        var key = fs.readFileSync('./certs/ssl/Server.key');
+        var cert = fs.readFileSync('./certs/ssl/Server.crt');
+        var ca = fs.readFileSync('./certs/ssl/CA.crt');
+
+        var options = {
+            key: key,
+            cert: cert,
+            ca: ca
+        };
+
+        var https = require('https');
+        var server = https.createServer(options, meem);
+        //var server = http.createServer(meem);
 
         ///**
         // * Listen on provided port, on all network interfaces.
         // */
-        console.log('connected to http');
+        console.log('connected to https');
 
         server.listen(port);
         server.on('error', onError);
