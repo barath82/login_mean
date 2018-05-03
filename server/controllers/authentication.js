@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('user');
 var console = require('console');
+var express = require('express');
+var router =  express.Router();
 
 /*
  * Send response in JSON format 

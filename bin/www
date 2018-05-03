@@ -37,9 +37,9 @@
             ca: ca
         };
 
-        var https = require('https');
-        var server = https.createServer(options, meem);
-        //var server = http.createServer(meem);
+        var http = require('http');
+        //var server = https.createServer(options, meem);
+        var server = http.createServer(meem);
 
         ///**
         // * Listen on provided port, on all network interfaces.
