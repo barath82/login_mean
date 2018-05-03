@@ -25,17 +25,17 @@
         ///**
         // * Create HTTP server.
         // */
-        var fs = require('fs');
+        //var fs = require('fs');
 
-        var key = fs.readFileSync('./certs/ssl/Server.key');
-        var cert = fs.readFileSync('./certs/ssl/Server.crt');
-        var ca = fs.readFileSync('./certs/ssl/CA.crt');
+        //var key = fs.readFileSync('./certs/ssl/Server.key');
+        //var cert = fs.readFileSync('./certs/ssl/Server.crt');
+        //var ca = fs.readFileSync('./certs/ssl/CA.crt');
 
-        var options = {
-            key: key,
-            cert: cert,
-            ca: ca
-        };
+        //var options = {
+        //    key: key,
+        //    cert: cert,
+        //    ca: ca
+        //};
 
         var http = require('http');
         //var server = https.createServer(options, meem);
